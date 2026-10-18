@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="avatar" aria-hidden="true">
+        <img src="assets/anna.jpg" alt="Avatar Anna Yamada">
+      </div>
+      <div class="profile">
+        <h1 id="nama">Anna Yamada</h1>
+        <p id="jabatan">Staff IT</p>
+      </div>
+      <div class="time">
+        <strong id="hari"></strong>
+        <span id="tanggal"></span>
+      </div>
+    </header>
+
+    <section class="card" aria-labelledby="judul-form">
+      <form id="form-tugas">
+        <label for="tugas" id="judul-form">Tugas baru</label>
+        <textarea id="tugas" rows="3" placeholder="Tulis tugas yang akan dikerjakan..." required></textarea>
+
+        <fieldset>
+          <legend>Level prioritas</legend>
+          <div class="segmen">
+            <input type="radio" name="prioritas" id="p-low" value="Low">
+            <label for="p-low">Low</label>
+            <input type="radio" name="prioritas" id="p-medium" value="Medium" checked>
+            <label for="p-medium">Medium</label>
+            <input type="radio" name="prioritas" id="p-high" value="High">
+            <label for="p-high">High</label>
+          </div>
+        </fieldset>
+
+        <label for="tenggat">Tenggat (opsional)</label>
+        <input type="date" id="tenggat">
+
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="judul-todo">
+      <div class="bar">
+        <h2 id="judul-todo">To Do <span id="jumlah-todo">(0)</span></h2>
+        <button type="button" id="hapus-semua" class="btn-bahaya">Delete All</button>
+      </div>
+      <ul id="daftar-todo" class="daftar"></ul>
+      <p id="kosong-todo" class="kosong">Belum ada tugas. Tulis tugas pertamamu di atas.</p>
+    </section>
+
+    <section class="card" aria-labelledby="judul-done">
+      <h2 id="judul-done">Done <span id="jumlah-done">(0)</span></h2>
+      <ul id="daftar-done" class="daftar"></ul>
+      <p id="kosong-done" class="kosong">Tugas yang selesai akan muncul di sini.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
